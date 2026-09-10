@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ECO Plus Diagnostic Center - Admin</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ==============================
+         ADMIN LOGIN PAGE
+         ============================== -->
+
+    <section id="loginPage" class="page active">
+
+        <div class="auth-container">
+
+            <div class="auth-card">
+
+                <div class="auth-header">
+                    <h1>🔬 ECO Plus</h1>
+                    <p>Diagnostic Center Admin</p>
+                </div>
+
+                <div id="loginMessage" class="message"></div>
+
+                <form id="loginForm" class="auth-form">
+
+                    <div class="form-group">
+                        <label for="username">Admin Username</label>
+
+                        <input
+                            type="text"
+                            id="username"
+                            name="username"
+                            placeholder="Enter username"
+                            autocomplete="username"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Enter password"
+                            autocomplete="current-password"
+                            required
+                        >
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block">
+                        Login
+                    </button>
+
+                </form>
+
+                <div class="auth-footer">
+                    <p><strong>ECO Plus Diagnostic Center</strong></p>
+                    <p>Accurate Diagnosis. Better Health.</p>
+                    <p>Frontend demonstration only</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==============================
+         ADMIN DASHBOARD
+         ============================== -->
+
+    <section id="dashboardPage" class="page">
+
+        <div class="dashboard-container">
+
+            <!-- Header -->
+
+            <header class="dashboard-header">
+
+                <div class="header-content">
+                    <h1>🔬 ECO Plus Diagnostic Center</h1>
+                    <p>Administrator Dashboard</p>
+                </div>
+
+                <button id="logoutBtn" class="btn btn-danger">
+                    Logout
+                </button>
+
+            </header>
+
+
+            <div class="dashboard-content">
+
+                <!-- Sidebar -->
+
+                <aside class="dashboard-sidebar">
+
+                    <nav class="sidebar-menu">
+
+                        <div class="menu-section">
+
+                            <h3>Dashboard</h3>
+
+                            <button
+                                class="action-btn"
+                                data-action="dashboard">
+                                📊 Dashboard
+                            </button>
+
+                            <button
+                                class="action-btn"
+                                data-action="patients">
+                                👥 Patients
+                            </button>
+
+                            <button
+                                class="action-btn"
+                                data-action="appointments">
+                                📅 Appointments
+                            </button>
+
+                        </div>
+
+
+                        <div class="menu-section">
+
+                            <h3>Diagnostic</h3>
+
+                            <button
+                                class="action-btn"
+                                data-action="tests">
+                                🧪 Laboratory Tests
+                            </button>
+
+                            <button
+                                class="action-btn"
+                                data-action="reports">
+                                📄 Reports
+                            </button>
+
+                            <button
+                                class="action-btn"
+                                data-action="physicians">
+                                👨‍⚕️ Physicians
+                            </button>
+
+                        </div>
+
+
+                        <div class="menu-section">
+
+                            <h3>Services</h3>
+
+                            <button
+                                class="action-btn"
+                                data-action="homeCollection">
+                                🏠 Home Collection
+                            </button>
+
+                            <button
+                                class="action-btn"
+                                data-action="settings">
+                                ⚙️ Settings
+                            </button>
+
+                            <p class="status-info">
+                                ● System status: Online
+                            </p>
+
+                        </div>
+
+                    </nav>
+
+                </aside>
+
+
+                <!-- Main Dashboard -->
+
+                <main class="dashboard-main">
+
+                    <div id="dashboardMessage" class="message"></div>
+
+
+                    <!-- Statistics -->
+
+                    <section class="stats-section">
+
+                        <h2>Dashboard Overview</h2>
+
+                        <div class="stats-grid">
+
+                            <div class="stat-card">
+
+                                <div class="stat-icon">
+                                    👥
+                                </div>
+
+                                <div class="stat-content">
+                                    <h3>Total Patients</h3>
+                                    <div class="stat-number" id="patientCount">
+                                        1,248
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                            <div class="stat-card">
+
+                                <div class="stat-icon">
+                                    📅
+                                </div>
+
+                                <div class="stat-content">
+                                    <h3>Appointments</h3>
+                                    <div class="stat-number" id="appointmentCount">
+                                        86
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                            <div class="stat-card">
+
+                                <div class="stat-icon">
+                                    🧪
+                                </div>
+
+                                <div class="stat-content">
+                                    <h3>Laboratory Tests</h3>
+                                    <div class="stat-number" id="testCount">
+                                        42
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                            <div class="stat-card">
+
+                                <div class="stat-icon">
+                                    📄
+                                </div>
+
+                                <div class="stat-content">
+                                    <h3>Reports</h3>
+                                    <div class="stat-number" id="reportCount">
+                                        327
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- Recent Activity -->
+
+                    <section class="activity-section">
+
+                        <div class="activity-header">
+
+                            <h2>Recent Activity</h2>
+
+                            <button
+                                id="clearActivityBtn"
+                                class="btn btn-secondary btn-small">
+                                Clear
+                            </button>
+
+                        </div>
+
+
+                        <div id="activityList" class="activity-list">
+
+                            <div class="activity">
+
+                                <span class="activity-dot"></span>
+
+                                <div>
+                                    <strong>
+                                        Admin dashboard initialized
+                                    </strong>
+
+                                    <small>
+                                        Just now
+                                    </small>
+                                </div>
+
+                            </div>
+
+
+                            <div class="activity">
+
+                                <span class="activity-dot"></span>
+
+                                <div>
+                                    <strong>
+                                        Laboratory system online
+                                    </strong>
+
+                                    <small>
+                                        Today
+                                    </small>
+                                </div>
+
+                            </div>
+
+
+                            <div class="activity">
+
+                                <span class="activity-dot"></span>
+
+                                <div>
+                                    <strong>
+                                        Diagnostic services available
+                                    </strong>
+
+                                    <small>
+                                        Today
+                                    </small>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+                </main>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <script src="app.js"></script>
+
+</body>
+</html>
