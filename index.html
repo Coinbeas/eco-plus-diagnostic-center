@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagnostic Admin Center - Eco Plus</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Login Page -->
+    <div id="loginPage" class="page active">
+        <div class="auth-container">
+            <div class="auth-card">
+                <div class="auth-header">
+                    <h1>Eco Plus Diagnostic</h1>
+                    <p>Admin Login</p>
+                </div>
+                
+                <form id="loginForm" class="auth-form">
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            placeholder="admin@ecoplus.com"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input 
+                            type="password" 
+                            id="password" 
+                            placeholder="Enter your password"
+                            required
+                        >
+                    </div>
+
+                    <div id="loginMessage" class="message"></div>
+
+                    <button type="submit" class="btn btn-primary btn-block">
+                        Login
+                    </button>
+                </form>
+
+                <div class="auth-footer">
+                    <p>Demo Credentials:</p>
+                    <p>Email: admin@ecoplus.com</p>
+                    <p>Password: any password</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Two-Factor Authentication Page -->
+    <div id="twoFactorPage" class="page">
+        <div class="auth-container">
+            <div class="auth-card">
+                <div class="auth-header">
+                    <h1>Two-Factor Authentication</h1>
+                    <p>Verify your identity</p>
+                </div>
+                
+                <form id="twoFactorForm" class="auth-form">
+                    <p class="info-text">
+                        Enter the 6-digit code from your authentication app.
+                    </p>
+
+                    <div class="form-group">
+                        <label for="totpCode">Authentication Code</label>
+                        <input 
+                            type="text" 
+                            id="totpCode" 
+                            placeholder="000000"
+                            maxlength="6"
+                            required
+                        >
+                    </div>
+
+                    <div id="twoFactorMessage" class="message"></div>
+
+                    <button type="submit" class="btn btn-primary btn-block">
+                        Verify
+                    </button>
+
+                    <button 
+                        type="button" 
+                        id="backToLogin" 
+                        class="btn btn-secondary btn-block"
+                    >
+                        Back to Login
+                    </button>
+                </form>
+
+                <div class="auth-footer">
+                    <p>Demo: Enter any 6-digit code</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dashboard Page -->
+    <div id="dashboardPage" class="page">
+        <div class="dashboard-container">
+            <!-- Header -->
+            <header class="dashboard-header">
+                <div class="header-content">
+                    <h1>Eco Plus Diagnostic Admin</h1>
+                    <p>Diagnostic Center Management System</p>
+                </div>
+                <button id="logoutBtn" class="btn btn-danger">
+                    Logout
+                </button>
+            </header>
+
+            <!-- Main Content -->
+            <div class="dashboard-content">
+                <!-- Sidebar -->
+                <aside class="dashboard-sidebar">
+                    <nav class="sidebar-menu">
+                        <div class="menu-section">
+                            <h3>Quick Actions</h3>
+                            <button class="action-btn" data-action="patient">
+                                👥 Patients
+                            </button>
+                            <button class="action-btn" data-action="appointment">
+                                📅 Appointments
+                            </button>
+                            <button class="action-btn" data-action="report">
+                                📊 Reports
+                            </button>
+                            <button class="action-btn" data-action="settings">
+                                ⚙️ Settings
+                            </button>
+                        </div>
+
+                        <div class="menu-section">
+                            <h3>System</h3>
+                            <p class="status-info">Status: Online</p>
+                            <p class="status-info">Users: Connected</p>
+                        </div>
+                    </nav>
+                </aside>
+
+                <!-- Main Area -->
+                <main class="dashboard-main">
+                    <!-- Statistics -->
+                    <section class="stats-section">
+                        <h2>Dashboard Overview</h2>
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <div class="stat-icon">👤</div>
+                                <div class="stat-content">
+                                    <h3>Total Patients</h3>
+                                    <p class="stat-number">1,234</p>
+                                </div>
+                            </div>
+
+                            <div class="stat-card">
+                                <div class="stat-icon">📋</div>
+                                <div class="stat-content">
+                                    <h3>Today's Appointments</h3>
+                                    <p class="stat-number">45</p>
+                                </div>
+                            </div>
+
+                            <div class="stat-card">
+                                <div class="stat-icon">✅</div>
+                                <div class="stat-content">
+                                    <h3>Tests Completed</h3>
+                                    <p class="stat-number">892</p>
+                                </div>
+                            </div>
+
+                            <div class="stat-card">
+                                <div class="stat-icon">⚠️</div>
+                                <div class="stat-content">
+                                    <h3>Pending Reports</h3>
+                                    <p class="stat-number">23</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Activity Log -->
+                    <section class="activity-section">
+                        <div class="activity-header">
+                            <h2>Activity Log</h2>
+                            <button id="clearActivity" class="btn btn-small">
+                                Clear Log
+                            </button>
+                        </div>
+                        <div id="activityList" class="activity-list">
+                            <!-- Activities will be added here -->
+                        </div>
+                    </section>
+                </main>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="app.js"></script>
+</body>
+</html>
